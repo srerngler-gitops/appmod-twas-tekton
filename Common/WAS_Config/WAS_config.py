@@ -33,7 +33,7 @@ GlobalSecurityVar_1=AdminConfig.getid('/Cell:' + AdminControl.getCell() + '/' + 
 AdminConfig.create('JAASAuthData', GlobalSecurityVar_1, [['password', 'db2inst1'], ['userId', 'db2inst1'], ['alias', Node + 'DBUser'], ['description', '']])
 # Starting Creating Connection Factories
 # Starting Creating JDBC Providers
-AdminConfigVar_12=AdminTask.createDatasource(AdminConfigVar_11, ["-name", "OrderDS" , "-jndiName", "jdbc/orderds" , "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper" , "-componentManagedAuthenticationAlias", Node+'DBUser' , "-xaRecoveryAuthAlias", Node+'DBUser' , "-configureResourceProperties", "[[databaseName java.lang.String ORDERDB] [driverType java.lang.Integer 4] [serverName java.lang.String c-db2-db2u.db2.svc] [portNumber java.lang.Integer 50000] ]" ])
+AdminConfigVar_12=AdminTask.createDatasource(AdminConfigVar_11, ["-name", "OrderDS" , "-jndiName", "jdbc/orderds" , "-dataStoreHelperClassName", "com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper" , "-componentManagedAuthenticationAlias", Node+'DBUser' , "-xaRecoveryAuthAlias", Node+'DBUser' , "-configureResourceProperties", "[[databaseName java.lang.String TORDERDB] [driverType java.lang.Integer 4] [serverName java.lang.String c-db2-db2u.db2.svc] [portNumber java.lang.Integer 50000] ]" ])
 AdminConfigVar_13=AdminConfig.showAttribute(AdminConfigVar_12, 'propertySet')
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_13, [['name', 'retrieveMessagesFromServerOnGetMessage'], ['value', 'true'], ['type', 'java.lang.String']])
 AdminConfig.create('J2EEResourceProperty', AdminConfigVar_13, [['name', 'beginTranForVendorAPIs'], ['value', 'false'], ['type', 'java.lang.String']])
